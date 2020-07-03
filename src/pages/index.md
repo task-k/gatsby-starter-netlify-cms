@@ -8,16 +8,18 @@ mainpitch:
   title: そのままだとKALDIのテンプレートになる
   description: >
     netlify cmsをhttps://www.netlifycms.org/docs/start-with-a-template/からスタートすると、github accountに紐付けして、リポジトリが作成される。
-description: >-
+description: > 
+  graphqlのクエリで呼び出されているので、ここはマークダウンではない。
   markdownの最初でtemplateKeyを選択すると、テンプレートを変更できる。
-  テンプレートは無限に作成できる。  
+  テンプレートは無限に作成できる。
   上部のタイトルは/src/cms/preview-templateのjsxから書き出されている。
   こういうのがあると入稿時辛いんじゃないかな。  
 intro:
   blurbs:
     - image: /img/coffee.png
       text: >
-        We sell green and roasted coffee beans that are sourced directly from
+        We sell green  
+        and roasted coffee beans that are sourced directly from
         independent farmers and farm cooperatives. We’re proud to offer a
         variety of coffee beans grown with great care for the environment and
         local communities. Check our post or contact us directly for current
@@ -65,3 +67,6 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
+
+## いきなりマークいダウン
+graphqlのそとのマークダウンはhtmlとしてパースされます。

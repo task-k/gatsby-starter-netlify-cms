@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import Content, { HTMLContent } from '../components/Content'
 
 export const IndexPageTemplate = ({
   image,
@@ -14,8 +15,17 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
-}) => (
+  contentHtml,
+  contentComponent
+}) => {
+  const PageContent = contentComponent || Content
+  return (
   <div>
+    <PageContent
+      className="content"
+      content={contentHtml} 
+    />
+
     <div
       className="full-width-image margin-top-0"
       style={{
@@ -112,7 +122,7 @@ export const IndexPageTemplate = ({
       </div>
     </section>
   </div>
-)
+)}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -124,10 +134,14 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  content: PropTypes.string,
+  contentComponent: PropTypes.func,
 }
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
+  const { markdownRemark: post } = data
+
 
   return (
     <Layout>
@@ -139,7 +153,9 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
-      />
+        contentHtml ={post.html}
+        contentComponent={HTMLContent}
+        />
     </Layout>
   )
 }
@@ -148,6 +164,7 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
+      html: PropTypes.string
     }),
   }),
 }
@@ -157,6 +174,7 @@ export default IndexPage
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      html
       frontmatter {
         title
         image {
