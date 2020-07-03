@@ -1,18 +1,18 @@
 ---
 templateKey: index-page
-title: netlifyのtopです
+title: netlifyのtopですよね
 image: /img/home-jumbotron.jpg
 heading: KALDIのコーヒーは最高です
 subheading: localでmdでページ作成できる
 mainpitch:
   title: そのままだとKALDIのテンプレートになる
   description: >
-    netlify cmsをhttps://www.netlifycms.org/docs/start-with-a-template/からスタートすると、github accountに紐付けして、リポジトリが作成される。
-description: >-
-  markdownの最初でtemplateKeyを選択すると、テンプレートを変更できる。
-  テンプレートは無限に作成できる。  
-  上部のタイトルは/src/cms/preview-templateのjsxから書き出されている。
-  こういうのがあると入稿時辛いんじゃないかな。  
+    netlify
+    cmsをhttps://www.netlifycms.org/docs/start-with-a-template/からスタートすると、github
+    accountに紐付けして、リポジトリが作成される。
+description: "markdownの最初でtemplateKeyを選択すると、テンプレートを変更できる。
+  テンプレートは無限に作成できる。   上部のタイトルは/src/cms/preview-templateのjsxから書き出されている。
+  こういうのがあると入稿時辛いんじゃないかな。  "
 intro:
   blurbs:
     - image: /img/coffee.png
