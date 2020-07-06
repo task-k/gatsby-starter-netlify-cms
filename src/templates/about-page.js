@@ -27,6 +27,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  error: PropTypes.object,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
@@ -40,6 +41,7 @@ const AboutPage = ({ data }) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
+        // error={post.frontmatter.errors}
       />
     </Layout>
   )
