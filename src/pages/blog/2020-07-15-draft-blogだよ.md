@@ -45,7 +45,7 @@ background-color: #ededed;
 
 <script>
 
-const testElement = document.querySelector('.js-control');
+var testElement = document.querySelector('.js-control');
 
 testElement.style.color = 'blue';
 
